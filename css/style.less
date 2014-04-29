@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    font: 400 14pt "Roboto", sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+.width {
+    margin: 0 auto;
+    max-width: 840px;
+    width: 90%;
+}
+
+header {
+    height: 500px;
+    width: 100%;
+    background: url(../images/bg.jpg) bottom left;
+    background-size: cover;
+    color: #FFF;
+    h1 {
+        padding: 240px 0;
+        font-weight: 500;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        span {
+            font-weight: 300;
+        }
+    }
+    h1:before {
+        content: "\{\}";
+        font: 900 23px "Source Code Pro";
+        letter-spacing: 2px;
+        position: relative;
+        top: -3px;
+        right: 0.5em;
+    }
+}
