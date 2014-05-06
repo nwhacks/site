@@ -1,3 +1,15 @@
+$.easing.easeInOutCubic = function (x, t, b, c, d) {
+	if ((t/=d/2) < 1) return c/2*t*t*t + b;
+	return c/2*((t-=2)*t*t + 2) + b;
+}
+
+$('header nav a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500, "easeInOutCubic");
+    return false;
+});
+
 $("#faq nav a").click(function(e) {
 	e.preventDefault();
 	$("#faq article").removeAttr("class");
