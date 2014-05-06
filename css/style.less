@@ -3,11 +3,20 @@ body {
     padding: 0;
     font: 400 14pt "Roboto", sans-serif;
     text-rendering: optimizeLegibility;
+    opacity: 1;
+    -webkit-transition: opacity 200ms;
+    -moz-transition: opacity 200ms;
+    -ms-transition: opacity 200ms;
+    -o-transition: opacity 200ms;
+    transition: opacity 200ms;
+}
+body.loading {
+    opacity: 0;
 }
 
 .width {
     margin: 0 auto;
-    max-width: 840px;
+    max-width: 1000px;
     width: 90%;
 }
 .btn {
@@ -40,7 +49,7 @@ body {
 }
 
 h1 {
-    text-transform: lowercase;
+    // text-transform: lowercase;
 }
 a {
     text-decoration: none;
@@ -51,15 +60,18 @@ a {
 }
 
 header {
-    height: 500px;
+    position: absolute;
+    height: 100%;
     width: 100%;
-    background: url(../images/bg.jpg) bottom left;
+    top: 0;
+    left: 0;
+    background: url(../images/bg.jpg) #456 bottom left;
     background-size: cover;
     color: #FFF;
     div {
         .width;
         position: relative;
-        top: 175px;
+        top: 150px;
     }
     #logo {
         width: 50px;
@@ -67,7 +79,7 @@ header {
     }
     h1 {
         .width;
-        padding: 225px 0 0;
+        padding: 25px 0 0;
         font-weight: 500;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -78,7 +90,18 @@ header {
             font-weight: 200;
         }
     }
+    nav {
+        .width;
+        padding: 10px 0;
+    }
     h2 {
+        .width;
+        padding: 190px 0 0;
+        margin: 0 auto;
+        font-weight: 200;
+        font-size: 2em;
+    }
+    h3 {
         .width;
         margin: 0 auto;
         font-weight: 200;
@@ -87,11 +110,15 @@ header {
 }
 
 section {
-    padding: 100px 0 50px 0;
+    padding: 75px 0 125px 0;
     h1 {
         color: #456;
         margin: 0.83em 0;
+        font-size: 2em;
     }
+}
+section:nth-of-type(even) {
+    background: rgba(68, 85, 102, 0.03);
 }
 
 #intro {
@@ -191,6 +218,44 @@ section {
     }
     &.hidden {
         opacity: 0;
+    }
+    div:first-of-type {
+        height: 300px;
+        a {
+            height: 300px;
+            img {
+                max-height: 240px;
+            }
+        }
+    }
+    div:nth-of-type(2) {
+        height: 200px;
+        a {
+            height: 200px;
+            img {
+                max-height: 140px;
+            }
+        }
+    }
+}
+
+#faq {
+    nav {
+        padding-bottom: 10px;
+        a {
+            color: #456;
+            opacity: 0.5;
+        }
+        a.active {
+            font-weight: bold;
+            opacity: 1;
+        }
+    }
+    article {
+        display: none;
+    }
+    article.active {
+        display: block;
     }
 }
 
